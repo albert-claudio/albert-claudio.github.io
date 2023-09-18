@@ -34,12 +34,34 @@ nav{
 }
 
 .nav_content{
+    position: relative;
     max-width: var(--max-width);
     margin: auto;
     padding: 1.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logo{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.logo a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
 }
 
 nav .logo a{
@@ -53,6 +75,8 @@ nav .logo a:hover{
     color: var(--primary-color-dark);
 }
 
+
+
 nav .checkbox{
     display: none;
 }
@@ -65,6 +89,10 @@ nav .checkbox i{
     font-size: 2rem;
     color: var(--primary-color);
     cursor: pointer;
+}
+
+nav .checkbox i:hover{
+    color: var(--primary-color-dark)
 }
 
 ul{
@@ -111,13 +139,27 @@ ul li a:hover{
 }
 
 .subtitle{
+    position: relative;
     letter-spacing: 2px;
     color: var(--text-light);
     font-weight: 600;
     margin-bottom: .5rem;
 }
 
+.subtitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
 .title{
+    position: relative;
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 3rem;
@@ -125,17 +167,43 @@ ul li a:hover{
     margin-bottom: 1rem;
 }
 
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
 .title span{
     font-weight: 600;
 }
 
 .description{
+    position: relative;
     line-height: 1.5rem;
     color: var(--text-dark);
     margin-bottom: 2rem;
 }
 
+.description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
 .action_btns{
+     position: relative;
     display: flex;
     gap: 1rem;
 }
@@ -152,7 +220,21 @@ ul li a:hover{
     cursor: pointer;
 }
 
+.action_btns::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
 .hire_me{
+   
    background-color: var(--primary-color);
     color: #ffffffff;
 }
@@ -160,6 +242,7 @@ ul li a:hover{
 .hire_me:hover{
     background-color: var(--primary-color-dark);
 }
+
 
 .portfolio {
     color: var(--primary-color);
@@ -170,14 +253,95 @@ ul li a:hover{
     color: #ffffffff;
 }
 
+
 .image{
+    position: relative;
     display: grid;
     place-items: center;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
 }
 
 .image img{
     width: min(25rem, 90%);
     border-radius: 100%;
+}
+
+.home-sci{
+    position: absolute;
+    margin: 60px;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: #ffffffff;
+}
+
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
 }
 
 @media (width < 750px){
@@ -214,6 +378,8 @@ ul li a:hover{
     .image{
         grid-area: 1/1/2/2;
     }
+
+    .home-sci
 
     .action_btns{
         margin: auto;
