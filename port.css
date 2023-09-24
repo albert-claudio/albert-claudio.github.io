@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Mukta:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root{
+    --primary-color:#55a9f7;
+    --primary-color-dark: #337cea;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
+    --max-width: 1200px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffffff;
+    z-index: 99;
+}
+
+.nav_content{
+    position: relative;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.logo a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+nav .logo a{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+nav .logo a:hover{
+    color: var(--primary-color-dark);
+}
+
+
+
+nav .checkbox{
+    display: none;
+}
+
+nav input{
+    display: none;
+}
+
+nav .checkbox i{
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+nav .checkbox i:hover{
+    color: var(--primary-color-dark)
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a{
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transform: 0.3s;
+}
+
+ul li a:hover{
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+  .container-slider {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+  }
+
+  
+  .slider {
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+  }
+
+
+
+  .on{
+    opacity: 1;
+   
+  }
+  
+
+  #prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  #prev-button img, #next-button img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #prev-button {
+    transform: rotate(180deg);
+  }
+
+  .container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+}
+
+.slider {
+    width: 100%;
+    transition: filter 0.3s ease-in-out;
+}
+
+.image-overlay {
+    position: relative;
+    width: 100%;
+    text-align: center; /* Centraliza o botão horizontalmente */
+}
+
+.go-to-website-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #55a9f7;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-overlay:hover .slider {
+    filter: blur(5px);
+}
+
+.image-overlay:hover .go-to-website-button {
+    display: block;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav .checkbox{
+        display: block;
+    }
+
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked ~ ul{
+        left: 0;
+    }
+
+    ul li a{
+        font-size: 1.25rem;
+    }
+
+
+    .container-images {
+        max-width: 100%; /* Imagens agora são redimensionáveis */
+      }
+      
+      .slider {
+        max-width: 100%; /* Imagens agora são redimensionáveis */
+        height: auto;
+      }
+      
+     /* Modifique o CSS dos botões para posicioná-los nas bordas das imagens */
+#prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: var(--text-light); /* Fundo com 50% de opacidade */
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Centralize verticalmente nas bordas */
+    transform: translateY(-50%); /* Ajuste para centralizar verticalmente */
+    z-index: 1; /* Coloque os botões acima das imagens */
+  }
+  
+  #prev-button {
+    left: 10px; /* Posicione o botão esquerdo 10px da borda */
+  }
+  
+  #next-button {
+    right: 10px; /* Posicione o botão direito 10px da borda */
+  }
+
+  #prev-button {
+    transform: rotate(180deg);
+  }
+      
+      /* Modifique a largura máxima para um layout responsivo (se já não o fez) */
+      :root {
+        --max-width: 100%; /* Altere para 100% para layout responsivo */
+      }
+}

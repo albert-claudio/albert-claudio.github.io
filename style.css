@@ -118,6 +118,7 @@ ul li a:hover{
     color: var(--secondary-color);
 }
 
+
 .section{
     background-color: var(--extra-light);
 }
@@ -397,7 +398,7 @@ ul li a:hover{
             right: 0;
             width: 100%;
             height: 100%;
-            background: #ffffffff;
+            background: var(--extra-light);
             animation: showRight 1s ease forwards;
             animation-delay: 2.5s;
             z-index: 2;
@@ -423,7 +424,7 @@ ul li a:hover{
     }
     
     .home-sci-container a:hover {
-        color: #ffffffff;
+        color: var(--extra-light);
     }
     
     
