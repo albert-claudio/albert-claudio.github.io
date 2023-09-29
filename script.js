@@ -13,23 +13,32 @@ function showSlider() {
 }
 
 function nextSlider() {
-  hideSlider()
-  if(currentSlide === slider.length -1) {
-    currentSlide = 0
+  hideSlider();
+  if (currentSlide === slider.length - 1) {
+    currentSlide = 0;
   } else {
-    currentSlide++
+    currentSlide++;
   }
-  showSlider()
+  showSlider();
+  updateLink();
 }
 
 function prevSlider() {
-  hideSlider()
-  if(currentSlide === 0) {
-    currentSlide = slider.length -1
+  hideSlider();
+  if (currentSlide === 0) {
+    currentSlide = slider.length - 1;
   } else {
-    currentSlide--
+    currentSlide--;
   }
-  showSlider()
+  showSlider();
+  updateLink();
+}
+
+function updateLink() {
+  const currentImage = slider[currentSlide];
+  const link = currentImage.getAttribute('data-link');
+  const websiteLink = document.getElementById('website-link');
+  websiteLink.href = link;
 }
 
 btnNext.addEventListener('click', nextSlider)
