@@ -20,16 +20,20 @@ a{
     text-decoration: none;
 }
 
+
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: #ffffffff; /* Cor de fundo clara */
+    color: var(--text-dark); /* Cor do texto padrão */
 }
+
 
 nav{
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ffffffff;
+   /* background-color: #ffffffff;*/
     z-index: 99;
 }
 
@@ -41,7 +45,13 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #ffffffff; /* Cor de fundo clara para o cabeçalho */
+    color: var(--text-dark); /* Cor do texto no cabeçalho no tema claro */
 }
+
+.nav_content a {
+    color: var(--primary-color); /* Cor dos links no tema claro */
+  }
 
 .logo{
     position: relative;
@@ -63,6 +73,7 @@ nav{
     animation: showRight 1s ease forwards;
     animation-delay: .4s;
 }
+
 
 nav .logo a{
     font-size: 1.5rem;
@@ -118,9 +129,36 @@ ul li a:hover{
     color: var(--secondary-color);
 }
 
+.dark-mode {
+    background-color: #111; /* Cor de fundo escura */
+    color: #fff; /* Texto branco no tema escuro */
+  }
+
+  .dark-mode .nav{
+    background: #111;
+  }
+
+  /* Estilos para o cabeçalho no tema escuro */
+  .dark-mode .nav_content {
+    background-color: #111; /* Cor de fundo escura para o cabeçalho no tema escuro */
+    color: #fff; /* Cor do texto no cabeçalho no tema escuro */
+  }
+  
+  /* Estilos para links no tema escuro */
+  .dark-mode .nav_content a {
+    color: var(--primary-color); /* Cor dos links no tema escuro */
+  }
+
+  .dark-mode .logo a::before{
+    background-color: #111;
+  }
 
 .section{
     background-color: #ffffffff;
+}
+
+.dark-mode .section{
+    background-color: #111;
 }
 
 .section_container{
@@ -132,6 +170,7 @@ ul li a:hover{
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
 }
+
 
 .content{
     display: flex;
@@ -147,6 +186,10 @@ ul li a:hover{
     margin-bottom: .5rem;
 }
 
+.dark-mode .subtitle{
+    color: #857c7c;
+}
+
 .subtitle::before {
     content: '';
     position: absolute;
@@ -154,9 +197,13 @@ ul li a:hover{
     right: 0;
     width: 100%;
     height: 100%;
-    background: #ffffffff;
+    background: rgb(255, 255, 255);
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
+}
+
+.dark-mode .subtitle::before{
+    background-color: #111;
 }
 
 .title{
@@ -166,6 +213,10 @@ ul li a:hover{
     line-height: 3rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
+}
+
+.dark-mode .title{
+    color: var(--extra-light);
 }
 
 .title::before {
@@ -180,6 +231,10 @@ ul li a:hover{
     animation-delay: 1.3s;
 }
 
+.dark-mode .title::before{
+    background-color: #111;
+}
+
 .title span{
     font-weight: 600;
 }
@@ -189,6 +244,10 @@ ul li a:hover{
     line-height: 1.5rem;
     color: var(--text-dark);
     margin-bottom: 2rem;
+}
+
+.dark-mode .description{
+    color: #fff;
 }
 
 .description::before {
@@ -201,6 +260,10 @@ ul li a:hover{
     background: #ffffffff;
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s;
+}
+
+.dark-mode .description::before{
+    background-color: #111;
 }
 
 .action_btns{
@@ -234,11 +297,16 @@ ul li a:hover{
     z-index: 2;
 }
 
+.dark-mode .action_btns::before{
+    background-color: #111;
+}
+
 .hire_me{
    
    background-color: var(--primary-color);
     color: #ffffffff;
 }
+
 
 .hire_me:hover{
     background-color: var(--primary-color-dark);
@@ -247,6 +315,11 @@ ul li a:hover{
 
 .portfolio {
     color: var(--primary-color);
+}
+
+.dark-mode .portfolio{
+    color: var(--primary-color-dark);
+    background-color: black;
 }
 
 .portfolio:hover{
@@ -272,6 +345,10 @@ ul li a:hover{
     animation: showRight 1s ease forwards;
     animation-delay: 3s;
     z-index: 100;
+}
+
+.dark-mode .image::after{
+    background-color: #111;
 }
 
 .image img{
@@ -301,6 +378,10 @@ ul li a:hover{
     animation: showRight 1s ease forwards;
     animation-delay: 2.5s;
     z-index: 2;
+}
+
+.dark-mode .home-sci-container::before{
+    background-color: #111;
 }
 
 .home-sci-container a{
@@ -365,9 +446,15 @@ ul li a:hover{
         gap: 3rem;
     }
 
+    .dark-mode ul{
+        background-color: #111;
+    }
+
     nav #check:checked ~ ul{
         left: 0;
     }
+
+
 
     ul li a{
         font-size: 1.25rem;

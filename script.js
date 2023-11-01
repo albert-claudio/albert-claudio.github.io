@@ -41,6 +41,32 @@ function updateLink() {
   websiteLink.href = link;
 }
 
+function isAfterSunset() {
+  const now = new Date();
+  const sunsetTime = new Date();
+  sunsetTime.setHours(17); // Horas
+  sunsetTime.setMinutes(50); // Minutos
+
+  return now >= sunsetTime;
+}
+
+function setTheme() {
+  const body = document.body;
+  const isDarkTheme = isAfterSunset();
+
+  if (isDarkTheme) {
+    body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+  }
+}
+
+// Verifica o tema ao carregar a página
+setTheme();
+
+// Verifica o tema a cada minuto (você pode ajustar o intervalo)
+setInterval(setTheme, 60000); // Verifica a cada minuto
+
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
 

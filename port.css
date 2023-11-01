@@ -22,6 +22,8 @@ a{
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: #ffffffff; /* Cor de fundo clara */
+    color: var(--text-dark); /* Cor do texto padrão */
 }
 
 nav{
@@ -29,7 +31,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ffffffff;
+    /*background-color: #ffffffff;*/
     z-index: 99;
 }
 
@@ -41,6 +43,10 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav_content a{
+    color: var(--primary-color);
 }
 
 .logo{
@@ -62,6 +68,10 @@ nav{
     background: #ffffffff;
     animation: showRight 1s ease forwards;
     animation-delay: .4s;
+}
+
+.dark-mode .logo a::before{
+    background-color: #111;
 }
 
 nav .logo a{
@@ -118,6 +128,30 @@ ul li a:hover{
     color: var(--secondary-color);
 }
 
+.dark-mode {
+    background-color: #111; /* Cor de fundo escura */
+    color: #fff; /* Texto branco no tema escuro */
+  }
+
+  .dark-mode .nav{
+    background: #111;
+  }
+
+  /* Estilos para o cabeçalho no tema escuro */
+  .dark-mode .nav_content {
+    background-color: #111; /* Cor de fundo escura para o cabeçalho no tema escuro */
+    color: #fff; /* Cor do texto no cabeçalho no tema escuro */
+  }
+  
+  /* Estilos para links no tema escuro */
+  .dark-mode .nav_content a {
+    color: var(--primary-color); /* Cor dos links no tema escuro */
+  }
+
+  .dark-mode .logo a::before{
+    background-color: #111;
+  }
+
   .container-slider {
     display: flex;
     width: 100%;
@@ -157,6 +191,11 @@ ul li a:hover{
     border: none;
     background-color: transparent;
     cursor: pointer;
+  }
+
+  .dark-mode #prev-button, #next-button{
+    border: 1px solid #fff;
+    background-color: #fff;
   }
   
   #prev-button img, #next-button img {
@@ -221,6 +260,11 @@ ul li a:hover{
         display: block;
     }
 
+    .dark-mode {
+        background-color: #111; /* Cor de fundo escura */
+        color: #fff; /* Texto branco no tema escuro */
+      }
+
     ul{
         position: absolute;
         width: 100%;
@@ -231,6 +275,10 @@ ul li a:hover{
         flex-direction: column;
         justify-content: center;
         gap: 3rem;
+    }
+
+    .dark-mode ul{
+        background-color: #111;
     }
 
     nav #check:checked ~ ul{
@@ -263,6 +311,11 @@ ul li a:hover{
     transform: translateY(-50%); /* Ajuste para centralizar verticalmente */
     z-index: 1; /* Coloque os botões acima das imagens */
   }
+
+  .dark-mode #prev-button, #next-button{
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
   
   #prev-button {
     left: 10px; /* Posicione o botão esquerdo 10px da borda */
@@ -275,6 +328,7 @@ ul li a:hover{
   #prev-button {
     transform: rotate(180deg);
   }
+
       
       /* Modifique a largura máxima para um layout responsivo (se já não o fez) */
       :root {
