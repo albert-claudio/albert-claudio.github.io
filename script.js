@@ -67,6 +67,15 @@ setTheme();
 // Verifica o tema a cada minuto (você pode ajustar o intervalo)
 setInterval(setTheme, 60000); // Verifica a cada minuto
 
+function scrollToSection() {
+  const section = document.getElementById('scrollSection');
+  const sectionHeight = section.offsetHeight;
+
+  window.scrollTo({
+    top: sectionHeight,
+    behavior: 'smooth'
+  });
+}
+
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
-

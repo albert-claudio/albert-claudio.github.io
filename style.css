@@ -86,49 +86,6 @@ nav .logo a:hover{
     color: var(--primary-color-dark);
 }
 
-
-
-nav .checkbox{
-    display: none;
-}
-
-nav input{
-    display: none;
-}
-
-nav .checkbox i{
-    font-size: 2rem;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-nav .checkbox i:hover{
-    color: var(--primary-color-dark)
-}
-
-ul{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
-    transition: left 0.3s;
-}
-
-ul li a{
-    padding: 0.5rem 1rem;
-    border: 2px solid transparent;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--text-dark);
-    transform: 0.3s;
-}
-
-ul li a:hover{
-    border-top-color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
-    color: var(--secondary-color);
-}
-
 .dark-mode {
     background-color: #111; /* Cor de fundo escura */
     color: #fff; /* Texto branco no tema escuro */
@@ -266,6 +223,71 @@ ul li a:hover{
     background-color: #111;
 }
 
+.skill{
+    position: relative;
+    top: -20px;
+    margin-bottom: 20px;
+}
+
+.skill h1{
+    font-weight: 900;
+}
+
+.dark-mode .skill span{
+    color: var(--extra-light);
+    font-weight: 500;
+}
+
+.skill span{
+    font-weight: 500;
+}
+
+.skill::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffffff;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+}
+
+.dark-mode .skill::before{
+    background-color: #111;
+}
+
+.skill p{
+    display: inline-block;
+    font-size: 35px;
+    margin-right: 1px;
+}
+
+.skill .html{
+    color: #c42b2b;
+}
+
+.skill .css{
+    color: #55a9f7;
+}
+
+.skill .javascript{
+    color: #ffc400;
+}
+
+.skill .react{
+    color: #337cea;
+}
+
+.skill .tailwind{
+    color: #00abf0;
+}
+
+.skill .boot{
+    color: #993399;
+}
+
 .action_btns{
      position: relative;
     display: flex;
@@ -357,6 +379,117 @@ ul li a:hover{
     z-index: 1;
 }
 
+.svg-container{
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.arrow-bottom{
+    color: gray;
+    animation: 0.4s ease 0s infinite alternate none running jump-arrow;
+    cursor: pointer;
+}
+
+
+.container-slider {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+  }
+  
+  
+  .slider {
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+  }
+  
+  
+  
+  .on{
+      opacity: 1;
+      
+    }
+    
+    
+    #prev-button, #next-button {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .dark-mode #prev-button, #next-button{
+        border: 1px solid #fff;
+    background-color: #fff;
+}
+  
+#prev-button img, #next-button img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #prev-button {
+    transform: rotate(180deg);
+  }
+
+  .container-images {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 700px;
+      margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    }
+
+.slider {
+    width: 100%;
+    transition: filter 0.3s ease-in-out;
+}
+
+.image-overlay {
+    position: relative;
+    width: 100%;
+    text-align: center; /* Centraliza o botão horizontalmente */
+}
+
+.go-to-website-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #55a9f7;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-overlay:hover .slider {
+    filter: blur(5px);
+}
+
+.image-overlay:hover .go-to-website-button {
+    display: block;
+}
 
 .home-sci-container{
     position: absolute;
@@ -422,6 +555,21 @@ ul li a:hover{
     width: 100%;
 }
 
+
+@keyframes jump-arrow{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(0.2em);
+    }
+
+    100% {
+        transform: translateY(0.4em);
+    }
+}
+
 @keyframes showRight {
     100% {
         width: 0;
@@ -434,37 +582,35 @@ ul li a:hover{
         display: block;
     }
 
-    ul{
-        position: absolute;
-        width: 100%;
-        height: calc(100vh - 85px);
-        left: -100%;
-        top: 85px;
-        background-color: #ffffffff;
-        flex-direction: column;
-        justify-content: center;
-        gap: 3rem;
-    }
-
-    .dark-mode ul{
-        background-color: #111;
-    }
 
     nav #check:checked ~ ul{
         left: 0;
     }
 
 
-
-    ul li a{
-        font-size: 1.25rem;
-    }
-
     .section_container{
         padding: 10rem 1rem 5rem 1rem;
         text-align: center;
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .skill{
+        position: relative;
+        top: -10px;
+        margin-bottom: 20px;
+    }
+
+    .skill p{
+        display: inline-block;
+        align-items: center; /* Ajuste para centralizar verticalmente */
+        margin-bottom: 10px; /* Espaçamento entre os ícones */
+    }
+
+    .skill p i{
+        font-size: 35px; /* Tamanho do ícone ajustado para telas menores */
+        margin-right: 5px; /* Espaçamento à direita do ícone */
+    }
+
 
     .image{
         grid-area: 1/1/2/2;
@@ -474,65 +620,116 @@ ul li a:hover{
         margin: auto;
     }
 
-    .home-sci-container {
-        position: static ; /* Remova a posição absoluta */
-        margin: 20px auto; /* Centralize horizontalmente com margens superior e inferior */
-        width: auto; /* A largura se ajustará automaticamente ao conteúdo */
-        
-    }
-
-        .home-sci-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffffff;
-            animation: showRight 1s ease forwards;
-            animation-delay: 2.5s;
-            z-index: 2;
-        }
-    }
     
-    .home-sci-container a {
+    .svg-container{
         position: relative;
-        display: inline-flex;
+        top: 40px;
         justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        background: transparent;
-        border: 2px solid #00abf0;
-        border-radius: 50%;
-        font-size: 20px;
-        color: #00abf0;
-        text-decoration: none;
-        z-index: 1;
-        overflow: hidden;
-        transition: .5s;
-    }
-    
-    .home-sci-container a:hover {
-        color: #ffffffff;
-    }
-    
-    
-    .home-sci-container a::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: #00abf0;
-        z-index: -1;
-        transition: .5s;
-    }
-    
-    .home-sci-container a:hover::before {
-        width: 100%;
+        padding-left: 9%;
     }
 
-    
+    .container-images {
+        max-width: 100%; /* Imagens agora são redimensionáveis */
+      }
+      
+      .slider {
+        max-width: 100%; /* Imagens agora são redimensionáveis */
+        height: auto;
+      }
+      
+     /* Modifique o CSS dos botões para posicioná-los nas bordas das imagens */
+#prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: var(--text-light); /* Fundo com 50% de opacidade */
+    cursor: pointer;
+    position: absolute;
+    top: 190%; /* Centralize verticalmente nas bordas */
+    transform: translateY(-50%); /* Ajuste para centralizar verticalmente */
+    z-index: 1; /* Coloque os botões acima das imagens */
+}
+
+  .dark-mode #prev-button, #next-button{
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
   
+  #prev-button {
+    left: 10px; /* Posicione o botão esquerdo 10px da borda */
+  }
+  
+  #next-button {
+    right: 10px; /* Posicione o botão direito 10px da borda */
+  }
+
+  #prev-button {
+    transform: rotate(180deg);
+  }
+
+      
+      /* Modifique a largura máxima para um layout responsivo (se já não o fez) */
+      :root {
+          --max-width: 100%; /* Altere para 100% para layout responsivo */
+      }
+          .home-sci-container {
+              position: relative; /* Remova a posição absoluta */
+              margin: 50px auto; /* Centralize horizontalmente com margens superior e inferior */
+              width: auto; /* A largura se ajustará automaticamente ao conteúdo */
+              
+          }
+          
+              .home-sci-container::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: #ffffffff;
+                  animation: showRight 1s ease forwards;
+                  animation-delay: 2.5s;
+                  z-index: 2;
+              }
+          }
+          
+          .home-sci-container a {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40px;
+              height: 40px;
+              background: transparent;
+              border: 2px solid #00abf0;
+              border-radius: 50%;
+              font-size: 20px;
+              color: #00abf0;
+              text-decoration: none;
+              z-index: 1;
+              overflow: hidden;
+              transition: .5s;
+          }
+          
+          .home-sci-container a:hover {
+              color: #ffffffff;
+          }
+          
+          
+          .home-sci-container a::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 100%;
+              background: #00abf0;
+              z-index: -1;
+              transition: .5s;
+          }
+          
+          .home-sci-container a:hover::before {
+              width: 100%;
+       } 
+      
+

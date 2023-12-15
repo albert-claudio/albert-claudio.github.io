@@ -15,19 +15,9 @@
     <div class="logo">
       <a href="#">Albert C.</a>
     </div>
-    <label for="check" class="checkbox">
-      <i class="ri-menu-line"></i>
-    </label>
-    <input type="checkbox" name="check" id="check">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="#">Resume</a></li>
-      <li><a href="port.html">Portfolio</a></li>
-    </ul>
   </div>
 </nav>
-  <section class="section">
+  <section class="section" id="scrollSection">
     <div class="section_container">
       <div class="content">
         <p class="subtitle">HELLO</p>
@@ -43,22 +33,63 @@
           Explore my work and discover how I turn ideas into reality
           digital.
         </p>
-        <div class="action_btns">
-          <a href="https://www.linkedin.com/in/albert-claudio-nascimento-01072005y18/"><button class="hire_me">Hire me</button></a>
-          <a href="mailto:albertclaudioa.nascimeto@gmail.com?subject=Saudações&body=Olá%2C%20como%20você%20está%3F"><button class="portfolio">Lets Talk</button></a>
+          <div class="skill">
+          <h1>Main <span>Skills:</span>
+          </h1>
+            <h2>
+            <p class="html"><i class='bx bxl-html5'></i></p>
+              <p class="css"><i class='bx bxl-css3'></i></p>
+              <p class="javascript"><i class='bx bxl-javascript'></i></p>
+              <p class="react"><i class='bx bxl-react'></i></p>
+              <p class="tailwind"><i class='bx bxl-tailwind-css'></i></p>
+              <p class="boot"><i class='bx bxl-bootstrap'></i></p>
+            </h2>
+          </div>
+          <div class="action_btns">
+            <a href="https://www.linkedin.com/in/albert-claudio-nascimento-01072005y18/"><button class="hire_me">Hire me</button></a>
+            <a href="mailto:albertclaudioa.nascimeto@gmail.com?subject=Saudações&body=Olá%2C%20como%20você%20está%3F"><button class="portfolio">Lets Talk</button></a>
         </div>
       </div>
       <div class="image">
         <img src="/images/Screenshot_20230806_110149_WhatsApp.jpg" alt="Albert Claudio"/>
       </div>
     </div>
-  </section>
-
-  <div class="home-sci-container">
-    <a href="https://twitter.com/albertclaudioo"><i class="bx bxl-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/albert-claudio-nascimento-01072005y18/"><i class="bx bxl-linkedin"></i></a>
-    <a href="https://github.com/albert-claudio"><i class="bx bxl-github"></i></a>
+    <div class="svg-container" onclick="scrollToSection()">
+    <svg class="arrow-bottom" width="40" height="40" viewBox="0 0 50 50" fill="none" 
+    xmlns="http://www.w3.org/2000/svg">
+    <path d="M43.9583 30.9896L26.4583 48.5417C26.25 48.75 26.0243 48.8972 25.7812 
+    48.9833C25.5382 49.0708 25.2777 49.1146 25 49.1146C24.7222 49.1146 24.4618 49.0708 
+    24.2187 48.9833C23.9757 48.8972 23.75 48.75 23.5416 48.5417L5.98954 30.9896C5.50343 
+    30.5035 5.26038 29.8958 5.26038 29.1667C5.26038 28.4375 5.52079 27.8125 6.04163 
+    27.2917C6.56246 26.7708 7.1701 26.5104 7.86454 26.5104C8.55899 26.5104 9.16663 26.7708 
+    9.68746 27.2917L25 42.6042L40.3125 27.2917C40.7986 26.8056 41.3972 26.5625 42.1083 
+    26.5625C42.8208 26.5625 43.4375 26.8229 43.9583 27.3438C44.4791 27.8646 44.7395 28.4722 
+    44.7395 29.1667C44.7395 29.8611 44.4791 30.4688 43.9583 30.9896Z" fill="white" fill-opacity="0.8">
+  </path></svg>
   </div>
+</section>
+
+<div class="container-slider">
+    <button id="prev-button"><img src="/images/arrow.png" alt="prev-button">
+    </button>
+    <!-- Slider -->
+    <div class="image-overlay">
+      <div class="container-images">
+        <img src="/images/dashboard.png" alt="girl" class="slider on" data-link="https://nexus-dashboard.vercel.app/">
+        <img src="/images/music.png" alt="girl" class="slider" data-link="https://music-player-git-master-sixjean.vercel.app/">
+        <img src="/images/login-page.png" alt="girl" class="slider" data-link="https://login-page-topaz.vercel.app/">
+        <img src="/images/quiz-react.png" alt="girl" class="slider" data-link="https://quiz-in-react.vercel.app/">
+        <button class="go-to-website-button"><a id="website-link" href="#">Go to website</a></button>
+      </div>
+    </div>
+    <button id="next-button"><img src="/images/arrow.png" alt="next-button"></button>
+  </div>
+</div>
+<div class="home-sci-container">
+  <a href="https://twitter.com/albertclaudioo"><i class="bx bxl-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/albert-claudio-nascimento-01072005y18/"><i class="bx bxl-linkedin"></i></a>
+  <a href="https://github.com/albert-claudio"><i class="bx bxl-github"></i></a>
+</div>
 
   <script src="script.js"></script>
 
