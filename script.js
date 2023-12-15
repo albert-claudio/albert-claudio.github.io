@@ -1,6 +1,7 @@
 const slider = document.querySelectorAll('.slider');
 const btnPrev = document.getElementById('prev-button');
 const btnNext = document.getElementById('next-button');
+const chk = document.getElementById('chk')
 
 let currentSlide = 0;
 
@@ -41,31 +42,10 @@ function updateLink() {
   websiteLink.href = link;
 }
 
-function isAfterSunset() {
-  const now = new Date();
-  const sunsetTime = new Date();
-  sunsetTime.setHours(17); // Horas
-  sunsetTime.setMinutes(50); // Minutos
+chk.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode')
+});
 
-  return now >= sunsetTime;
-}
-
-function setTheme() {
-  const body = document.body;
-  const isDarkTheme = isAfterSunset();
-
-  if (isDarkTheme) {
-    body.classList.add('dark-mode');
-  } else {
-    body.classList.remove('dark-mode');
-  }
-}
-
-// Verifica o tema ao carregar a página
-setTheme();
-
-// Verifica o tema a cada minuto (você pode ajustar o intervalo)
-setInterval(setTheme, 60000); // Verifica a cada minuto
 
 function scrollToSection() {
   const section = document.getElementById('scrollSection');
