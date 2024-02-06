@@ -393,107 +393,54 @@ nav .logo a:hover{
     cursor: pointer;
 }
 
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 
-
-.container-slider {
+.project-container {
     display: flex;
-    width: 100%;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  
-  .container-images {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 700px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
   }
   
   
-  .slider {
-    opacity: 0;
-    transition: opacity .2s;
-    position: absolute;
-    width: 100%;
+  .img-left .project-image, .img-right .project-description {
+    order: -1;
   }
   
-  
-  
-  .on{
-      opacity: 1;
-      
-    }
-    
-    
-    #prev-button, #next-button {
-        width: 30px;
-        height: 30px;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    
-    .dark-mode #prev-button, #next-button{
-    border: 1px solid #fff;
-    background-color: #fff;
-}
-  
-#prev-button img, #next-button img {
+  .project-image img {
     width: 100%;
-    height: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
+    height: auto;
   }
   
-  #prev-button {
-    transform: rotate(180deg);
+  .project-description {
+    flex: 1;
+    padding: 0 20px;
   }
 
-  .container-images {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 700px;
-      margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    }
-
-.slider {
-    width: 100%;
-    transition: filter 0.3s ease-in-out;
-}
-
-.image-overlay {
-    position: relative;
-    width: 100%;
-    text-align: center; /* Centraliza o botão horizontalmente */
-}
-
-.go-to-website-button {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    background-color: #55a9f7;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-}
-
-.image-overlay:hover .slider {
-    filter: blur(5px);
-}
-
-.image-overlay:hover .go-to-website-button {
-    display: block;
-}
+  .project-buttons {
+    margin-top: 20px; /* Espaçamento entre a descrição e os botões */
+  }
+  
+  .btn {
+    display: inline-block; /* Faz com que os botões se alinhem lado a lado */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    margin-right: 10px; /* Espaçamento entre os botões */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+  }
 
 .home-sci-container{
     position: absolute;
