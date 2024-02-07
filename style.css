@@ -393,34 +393,92 @@ nav .logo a:hover{
     cursor: pointer;
 }
 
+.port{
+    color: #0056b3;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-left: 25px;
+}
+
+
 .project {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  margin: 12px;
+  padding: 20px;
+  align-items: center;
+  margin-left: 10%;
 }
+
 
 .project-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 2rem;
+    align-items: center;
+    width: 75%;
   }
   
   
   .img-left .project-image, .img-right .project-description {
     order: -1;
   }
+
+  .project-image{
+    position: relative;
+    overflow: hidden;
+  }
   
   .project-image img {
     width: 100%;
     max-width: 400px; /* Ajuste conforme necessário */
     height: auto;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    transition: filter 0.3s ease;
   }
+
+  .description-technologies {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os ícones */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo levemente escuro para destacar ícones */
+  }
+
+  .project-image:hover img {
+    filter: blur(2px);
+  }
+  
+  .project-image:hover .description-technologies {
+    opacity: 1;
+  }
+  
+  .react, .node{
+    font-size: 2rem; /* Ajuste conforme necessário */
+    color: #fff; /* Ícones brancos */
+  }
+
   
   .project-description {
     flex: 1;
     padding: 0 20px;
+  }
+
+  .project-description p{
+    width: 75%;
   }
 
   .project-buttons {
@@ -609,6 +667,37 @@ nav .logo a:hover{
 }
 
 
+@media (max-width: 1024px) {
+    .project {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .project-image, .project-description {
+      width: 100%; /* Faz com que a imagem e a descrição ocupem toda a largura disponível */
+      max-width: 600px; /* Limita a largura máxima para não esticar demais em telas maiores */
+      margin: 0 auto; /* Centraliza dentro do .project */
+    }
+  
+    .project-image img {
+      /* Ajuste a altura ou largura máxima se necessário para manter a proporção desejada */
+      max-height: 400px; /* Exemplo de limite de altura, ajuste conforme necessário */
+      object-fit: cover; /* Mantém as proporções da imagem ao redimensionar */
+    }
+  
+    .project-description {
+      padding: 20px; /* Adiciona um pouco mais de espaço ao redor do texto */
+    }
+  
+    .project-description p {
+      font-size: 16px; /* Aumenta o tamanho da fonte para melhor leitura */
+      line-height: 1.5; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    }
+  
+    /* Ajustes específicos para botões e ícones podem ser adicionados aqui, se necessário */
+  }
+  
+
 @media screen and (max-width: 768px) {
     nav .checkbox{
         display: block;
@@ -661,49 +750,41 @@ nav .logo a:hover{
     }
 
 
-    .container-images {
-        max-width: 100%; /* Imagens agora são redimensionáveis */
+
+    .project {
+        flex-direction: column; /* Empilha os elementos verticalmente em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+        margin-left: 0; /* Remove a margem lateral para aproveitar melhor o espaço */
       }
-      
-      .slider {
-        max-width: 100%; /* Imagens agora são redimensionáveis */
-        height: auto;
+
+      .port{
+        display: none;
       }
-      
-      .container-slider {
+
+      .project-container{
+        
+      }
+    
+      .project-image, .project-description {
+        width: 100%; /* Faz com que a imagem e a descrição ocupem toda a largura disponível */
+        max-width: none; /* Sobrescreve qualquer max-width anterior para a imagem */
+        order: 0; /* Reseta a ordem para o padrão caso tenha sido alterada */
+      }
+      .project-description p {
+        width: 100%; /* Faz com que o parágrafo ocupe toda a largura disponível */
+        height: 20%;
+      }
+    
+      .description-technologies {
+        gap: 10px; /* Reduz o espaço entre os ícones para melhor ajuste em telas pequenas */
+      }
+
+      .project-buttons {
+        padding: 8px 12px; /* Ajusta o tamanho dos botões para melhor manuseio em telas menores */
+        font-size: 14px; /* Reduz o tamanho da fonte nos botões para economizar espaço */
+        justify-content: space-between;
         position: relative;
-    }
-
-     /* Modifique o CSS dos botões para posicioná-los nas bordas das imagens */
-     #prev-button, #next-button {
-        width: 30px;
-        height: 30px;
-        border: none;
-        background-color: var(--text-light); /* Fundo com 50% de opacidade */
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1; /* Coloque os botões acima das imagens */
-    }
-
-  .dark-mode #prev-button, #next-button{
-    border: 1px solid #fff;
-    background-color: #fff;
-  }
-  
-  #prev-button {
-    left: 10px; /* Posicione o botão esquerdo 10px da borda */
-  }
-  
-  #next-button {
-    right: 10px; /* Posicione o botão direito 10px da borda */
-  }
-
-  #prev-button {
-    transform: rotate(180deg);
-  }
-
+      }
       
       /* Modifique a largura máxima para um layout responsivo (se já não o fez) */
       :root {
@@ -770,3 +851,13 @@ nav .logo a:hover{
        } 
       
 
+       @media (max-width: 480px) {
+        .btn {
+          padding: 8px 12px; /* Reduz o padding dos botões para economizar espaço */
+          font-size: 14px; /* Diminui a fonte dos botões, se necessário */
+        }
+      
+        .react, .node {
+          font-size: 1.5rem; /* Reduz o tamanho dos ícones para telas muito pequenas */
+        }
+      }
