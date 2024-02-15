@@ -397,8 +397,8 @@ nav .logo a:hover{
     color: #0056b3;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    margin-left: 25px;
+    padding: 45px;
+    margin-left: 0px;
 }
 
 
@@ -408,7 +408,7 @@ nav .logo a:hover{
   justify-content: center;
   margin-bottom: 2rem;
   margin: 12px;
-  padding: 20px;
+  padding: 18px;
   align-items: center;
   margin-left: 10%;
 }
@@ -503,10 +503,11 @@ nav .logo a:hover{
 .home-sci-container{
     position: absolute;
     margin: 60px;
-    bottom: 40px;
+    bottom: 50px;
     width: 170px;
     display: flex;
     justify-content: space-between;
+    margin-right: 13.5%;
 }
 
 .home-sci-container::before {
@@ -632,6 +633,7 @@ nav .logo a:hover{
 }
 
 
+
 .checkbox:checked + .label .ball{
     transform: translateX(24px);
 }
@@ -644,7 +646,33 @@ nav .logo a:hover{
     color: #f39c12;
 }
 
+.more-projects{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    right: 30rem;
+    margin: 2px;
+    padding: 40px;
+    bottom: -40rem;
+}
 
+.more-projects button{
+    background: #00abf0;
+    color: white;
+    width: 107px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins',sans-serif;
+    cursor: pointer;
+}
+
+.more-projects button:hover{
+    background: #007bff;
+    transition: all .2s ease-in;
+}
 
 @keyframes jump-arrow{
     0%{
@@ -758,11 +786,9 @@ nav .logo a:hover{
       }
 
       .port{
-        display: none;
-      }
-
-      .project-container{
-        
+        margin: 5rem;
+        top: 4.5rem;
+        bottom: -5,8rem;
       }
     
       .project-image, .project-description {

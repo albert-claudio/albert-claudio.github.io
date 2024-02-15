@@ -1,4 +1,5 @@
 const chk = document.getElementById('chk')
+const proj = document.getAnimations('more')
 
 let currentSlide = 0;
 
@@ -16,5 +17,8 @@ function scrollToSection() {
     top: sectionHeight,
     behavior: 'smooth'
   });
-}
+
+  proj.addEventListener("click", () => {
+    elementPlatforms.classList.toggle("active");
+});
 
