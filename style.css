@@ -398,9 +398,13 @@ nav .logo a:hover{
     justify-content: center;
     align-items: center;
     padding: 45px;
-    margin-left: 0px;
+    margin-left: 26.5vh;
 }
 
+.dark-mode .port {
+    color: #00abf0;
+    transition: all 0.2s ease-in-out;
+}
 
 .project {
   display: flex;
@@ -646,33 +650,6 @@ nav .logo a:hover{
     color: #f39c12;
 }
 
-.more-projects{
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    right: 30rem;
-    margin: 2px;
-    padding: 40px;
-    bottom: -40rem;
-}
-
-.more-projects button{
-    background: #00abf0;
-    color: white;
-    width: 107px;
-    height: 50px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: 'Poppins',sans-serif;
-    cursor: pointer;
-}
-
-.more-projects button:hover{
-    background: #007bff;
-    transition: all .2s ease-in;
-}
 
 @keyframes jump-arrow{
     0%{
@@ -791,11 +768,15 @@ nav .logo a:hover{
         bottom: -5,8rem;
       }
     
-      .project-image, .project-description {
+
+
+      .project-description {
         width: 100%; /* Faz com que a imagem e a descrição ocupem toda a largura disponível */
         max-width: none; /* Sobrescreve qualquer max-width anterior para a imagem */
         order: 0; /* Reseta a ordem para o padrão caso tenha sido alterada */
       }
+
+
       .project-description p {
         width: 100%; /* Faz com que o parágrafo ocupe toda a largura disponível */
         height: 20%;
@@ -803,6 +784,7 @@ nav .logo a:hover{
     
       .description-technologies {
         gap: 10px; /* Reduz o espaço entre os ícones para melhor ajuste em telas pequenas */
+        
       }
 
       .project-buttons {
@@ -875,6 +857,7 @@ nav .logo a:hover{
           .home-sci-container a:hover::before {
               width: 100%;
        } 
+
       
 
        @media (max-width: 480px) {

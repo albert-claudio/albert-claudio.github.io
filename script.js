@@ -21,4 +21,4 @@ function scrollToSection() {
   proj.addEventListener("click", () => {
     elementPlatforms.classList.toggle("active");
 });
-
+}
